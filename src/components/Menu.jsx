@@ -10,7 +10,9 @@ const Menu = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  
   useGSAP(() => {
+
     gsap.fromTo('#title', {opacity: 0}, {opacity: 1, duration: 1})
     gsap.fromTo('.cocktail img', {opacity: 0, xPercent: -100}, {
       xPercent: 0, opacity: 1, duration: 1, ease: 'power1.inOut'
@@ -21,6 +23,7 @@ const Menu = () => {
     gsap.fromTo('.details p', {yPercent: 100, opacity: 0}, {
       yPercent: 0, opacity: 100, ease: 'power1.inOut'
     })
+    
   }, [currentIndex])
 
   const totalCocktails = allCocktails.length;
@@ -40,9 +43,6 @@ const Menu = () => {
 
   return (
     <section id="menu" aria-labelledby="menu-heading">
-      <img src="/images/slider-left-leaf.png" alt="left-leaf" id="m-left-leaf"/>
-      <img src="/images/slider-right-leaf.png" alt="right-leaf" id="m-right-leaf"/>
-
       <h2 id='menu-heading' className='sr-only'>
         Cocktail Menu
       </h2>
